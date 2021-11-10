@@ -1,0 +1,30 @@
+fragment FaqAccordion on FaqAccordion {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  accordionText
+  question
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}
