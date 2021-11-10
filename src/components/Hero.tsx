@@ -49,7 +49,7 @@ const Hero = () => {
                 showArrows={true}
                 autoPlay
                 showStatus={false}
-                showThumbs={true}
+                showIndicators={false}
               >
                 {Array.from({ length: 3 }, (_, index) => {
                   return (
