@@ -1,0 +1,65 @@
+#hero {
+  background-color: $blue-100;
+  height: calc(100vh - 56px);
+  .container {
+    height: 100%;
+  }
+  .hero_wrapper {
+    display: grid;
+    height: 100%;
+    place-items: center;
+  }
+  p {
+    font-size: 1.15rem;
+  }
+  .kasten {
+    background: $blue-300;
+    display: inline-block;
+    padding: 0 0.25rem;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .hero_text {
+    text-align: center;
+  }
+  .hero_socials {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #hero {
+    position: relative;
+    background-color: white;
+
+    .hero_text {
+      text-align: left;
+    }
+    .hero_socials {
+      justify-content: flex-start;
+    }
+    .carousel-slider {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: white;
+        bottom: 5%;
+        left: 5%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  #hero::before {
+    content: "";
+    position: absolute;
+    background-color: $blue-100;
+    width: 40%;
+    height: calc(100vh - 56px);
+    top: 0;
+    bottom: 0;
+    left: 60%;
+  }
+}

@@ -4,10 +4,10 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Navigation = () => {
   return (
-    <Navbar bg="white" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Container>
-        <Link to="/" className="navbar-brand text-primary">
-          NavbarBrand
+        <Link to="/" className="navbar-brand text-white">
+          KDK
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" data-cy="nav_button" />
         <Navbar.Collapse id="basic-navbar-nav" data-cy="nav_collapse">
