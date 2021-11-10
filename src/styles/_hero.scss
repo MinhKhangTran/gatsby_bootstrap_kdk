@@ -1,8 +1,9 @@
 #hero {
   background-color: #eeffff;
-  height: calc(100vh - 56px);
+  height: calc(100% - 56px);
   .container {
     height: 100%;
+    padding-top: 3rem;
   }
   .hero_wrapper {
     display: grid;
