@@ -33,6 +33,7 @@
   #hero {
     position: relative;
     background-color: white;
+    height: calc(100vh - 56px);
 
     .hero_text {
       text-align: left;
