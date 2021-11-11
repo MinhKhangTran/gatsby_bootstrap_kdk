@@ -18,7 +18,7 @@ describe("Hero test", () => {
     ).should("be.visible");
   });
   it("Hero mobile test", () => {
-    cy.viewport("macbook-13");
+    cy.viewport("iphone-8");
     cy.get(".kasten").should("be.visible");
     cy.get("h1.text-uppercase").should("be.visible");
     cy.contains("Your local KDK club to reach your total goals").should(
@@ -32,7 +32,7 @@ describe("Hero test", () => {
     ).should("be.visible");
   });
   it("Hero tablet test", () => {
-    cy.viewport("macbook-13");
+    cy.viewport("ipad-2");
     cy.get(".kasten").should("be.visible");
     cy.get("h1.text-uppercase").should("be.visible");
     cy.contains("Your local KDK club to reach your total goals").should(
