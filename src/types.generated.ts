@@ -10942,6 +10942,19 @@ export type CtaQuery = {
   };
 };
 
+export type ContactQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ContactQuery = {
+  allGraphCmsContact: {
+    nodes: Array<{
+      desc?: string | null | undefined;
+      title?: string | null | undefined;
+      image?: { gatsbyImageData: unknown } | null | undefined;
+      imageHoritzontal?: { gatsbyImageData: unknown } | null | undefined;
+    }>;
+  };
+};
+
 export type FaqQueryVariables = Exact<{ [key: string]: never }>;
 
 export type FaqQuery = {
