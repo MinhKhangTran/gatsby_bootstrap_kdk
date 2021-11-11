@@ -10992,3 +10992,20 @@ export type SeoQuery = {
     | null
     | undefined;
 };
+
+export type TeamQueryVariables = Exact<{ [key: string]: never }>;
+
+export type TeamQuery = {
+  allGraphCmsTeam: {
+    nodes: Array<{
+      title?: string | null | undefined;
+      teamMembers: Array<{
+        id: string;
+        desc?: string | null | undefined;
+        job?: string | null | undefined;
+        name?: string | null | undefined;
+        image?: { gatsbyImageData: unknown } | null | undefined;
+      }>;
+    }>;
+  };
+};

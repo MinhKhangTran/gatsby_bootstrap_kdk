@@ -12,11 +12,23 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" data-cy="nav_button" />
         <Navbar.Collapse id="basic-navbar-nav" data-cy="nav_collapse">
           <Nav className="me-auto align-lg-items-center">
-            <Nav.Link href="#hero">Home</Nav.Link>
-            <Nav.Link href="#menu">Features</Nav.Link>
-            <Nav.Link href="#gallery">Project</Nav.Link>
-            <Link className="nav-link" to="/about">
-              About
+            <Link className="nav-link" to="/#hero">
+              Home
+            </Link>
+            <Link className="nav-link" to="/#about">
+              About Us
+            </Link>
+            <Link className="nav-link" to="/#faq">
+              FAQ
+            </Link>
+            <Link className="nav-link" to="/#team">
+              Team
+            </Link>
+            <Link className="nav-link" to="/event">
+              Events
+            </Link>
+            <Link className="nav-link" to="/gallery">
+              Gallery
             </Link>
           </Nav>
           <a className="btn btn-light" href="#contact">
