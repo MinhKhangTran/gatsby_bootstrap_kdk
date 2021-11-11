@@ -19,7 +19,7 @@ const Navigation = () => {
               About
             </Link>
           </Nav>
-          <a className="btn btn-outline-primary" href="#contact">
+          <a className="btn btn-light" href="#contact">
             Contact
           </a>
         </Navbar.Collapse>

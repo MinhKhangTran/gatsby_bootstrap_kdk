@@ -10929,6 +10929,22 @@ export type AboutQuery = {
   };
 };
 
+export type FaqQueryVariables = Exact<{ [key: string]: never }>;
+
+export type FaqQuery = {
+  allGraphCmsFaq: {
+    nodes: Array<{
+      title?: string | null | undefined;
+      faqAccordions: Array<{
+        id: string;
+        accordionText?: string | null | undefined;
+        question?: string | null | undefined;
+      }>;
+      images: Array<{ gatsbyImageData: unknown; id: string }>;
+    }>;
+  };
+};
+
 export type HeroQueryVariables = Exact<{ [key: string]: never }>;
 
 export type HeroQuery = {
