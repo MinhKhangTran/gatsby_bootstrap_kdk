@@ -10,7 +10,6 @@ import { Carousel } from "react-responsive-carousel";
 const Hero = () => {
   const data: HeroQuery = useStaticQuery(query);
   const hero = data.allGraphCmsHero.nodes[0];
-  console.log(hero);
 
   return (
     <section id="hero">
@@ -48,6 +47,7 @@ const Hero = () => {
               <Carousel
                 showArrows={true}
                 autoPlay
+                showThumbs={false}
                 showStatus={false}
                 showIndicators={false}
               >

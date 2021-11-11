@@ -45,6 +45,13 @@ $blue-colors: (
 // import bootstrap whole sass lib (incorporates all above redefined vars & values)
 @import "~bootstrap/scss/bootstrap";
 
+.section {
+  margin-top: 7rem;
+}
+.section_title {
+  margin-bottom: 3rem;
+}
+
 //import custom components
 @import "./footer";
 @import "./navigation";

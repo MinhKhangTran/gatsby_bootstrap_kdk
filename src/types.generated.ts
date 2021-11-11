@@ -10910,6 +10910,25 @@ export type WebPOptions = {
   quality?: Maybe<Scalars["Int"]>;
 };
 
+export type AboutQueryVariables = Exact<{ [key: string]: never }>;
+
+export type AboutQuery = {
+  allGraphCmsAbout: {
+    nodes: Array<{
+      title?: string | null | undefined;
+      desc?: string | null | undefined;
+      events: Array<{
+        id: string;
+        date?: unknown | null | undefined;
+        slug?: string | null | undefined;
+        name?: string | null | undefined;
+        location?: string | null | undefined;
+      }>;
+      image?: { gatsbyImageData: unknown } | null | undefined;
+    }>;
+  };
+};
+
 export type HeroQueryVariables = Exact<{ [key: string]: never }>;
 
 export type HeroQuery = {
