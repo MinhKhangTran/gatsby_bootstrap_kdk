@@ -25,9 +25,6 @@ const FAQ = () => {
                 return (
                   <Col xs={4} key={image.id}>
                     <div
-                      className={`${
-                        index === number ? "active" : ""
-                      } faq_wrapper`}
                       tabIndex={-1}
                       aria-label={`faq thumbimages ${index + 1} button`}
                       onClick={() => {
@@ -35,6 +32,9 @@ const FAQ = () => {
                       }}
                     >
                       <GatsbyImage
+                        className={`${
+                          index === number ? "active" : ""
+                        } faq_wrapper`}
                         image={getImage(image as any)!}
                         alt={`faq thumbimages ${index + 1}`}
                       />

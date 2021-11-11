@@ -1,6 +1,10 @@
 .faq_wrapper {
   cursor: pointer;
+  opacity: 0.5;
 }
 .accordion-button {
   text-transform: capitalize;
+}
+.active {
+  opacity: 1;
 }
