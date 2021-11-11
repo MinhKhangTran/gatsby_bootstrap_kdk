@@ -10929,6 +10929,19 @@ export type AboutQuery = {
   };
 };
 
+export type CtaQueryVariables = Exact<{ [key: string]: never }>;
+
+export type CtaQuery = {
+  allGraphCmsCta: {
+    nodes: Array<{
+      ctaBtn?: string | null | undefined;
+      desc?: string | null | undefined;
+      title?: string | null | undefined;
+      image?: { gatsbyImageData: unknown } | null | undefined;
+    }>;
+  };
+};
+
 export type FaqQueryVariables = Exact<{ [key: string]: never }>;
 
 export type FaqQuery = {
