@@ -24,7 +24,7 @@ interface IFormInputs {
 const Contact = () => {
   const data: ContactQuery = useStaticQuery(query);
   const contact = data.allGraphCmsContact.nodes[0];
-  let isPageWide = useMediaQuery("(min-width: 768px)");
+  let isPageWide = useMediaQuery("(min-width: 992px)");
 
   // For toast
   const [message, setMessage] = useState("");

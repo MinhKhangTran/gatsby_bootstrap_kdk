@@ -3,6 +3,12 @@
 }
 #contact {
   background: $blue-100;
+  padding-bottom: 4rem;
+}
+@media screen and (min-width: 992px) {
+  #contact {
+    padding-bottom: 0rem;
+  }
 }
 
 input,
