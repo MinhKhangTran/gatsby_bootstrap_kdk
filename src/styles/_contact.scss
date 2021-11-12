@@ -1,0 +1,18 @@
+.contact_large_column {
+  padding: 0 5rem 0 10rem;
+}
+#contact {
+  background: $blue-100;
+}
+
+input,
+textarea {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  background: $gray-400;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}

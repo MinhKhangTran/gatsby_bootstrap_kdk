@@ -1,0 +1,102 @@
+fragment ScheduledOperation on ScheduledOperation {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  description
+  errorMessage
+  rawPayload
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  release {
+    ... on ScheduledRelease {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  status
+  affectedDocuments {
+    ... on About {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+    ... on Contact {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Cta {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Event {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Faq {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on FaqAccordion {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Gallery {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on GalleryImage {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Hero {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Team {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on TeamMember {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}
