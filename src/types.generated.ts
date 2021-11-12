@@ -7254,6 +7254,1192 @@ export type GraphCms_LocaleQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<GraphCms_Locale>>>;
 };
 
+export type GraphCms_ScheduledOperation = Node & {
+  affectedDocuments: Array<GraphCms_ScheduledOperationAffectedDocument>;
+  children: Array<Node>;
+  createdAt: Scalars["JSON"];
+  createdBy?: Maybe<GraphCms_User>;
+  description?: Maybe<Scalars["String"]>;
+  errorMessage?: Maybe<Scalars["String"]>;
+  id: Scalars["ID"];
+  internal: Internal;
+  parent?: Maybe<Node>;
+  publishedAt?: Maybe<Scalars["JSON"]>;
+  publishedBy?: Maybe<GraphCms_User>;
+  rawPayload: Scalars["JSON"];
+  release?: Maybe<GraphCms_ScheduledRelease>;
+  remoteId: Scalars["ID"];
+  remoteTypeName: Scalars["String"];
+  stage: GraphCms_Stage;
+  status: GraphCms_ScheduledOperationStatus;
+  updatedAt: Scalars["JSON"];
+  updatedBy?: Maybe<GraphCms_User>;
+};
+
+export type GraphCms_ScheduledOperationAffectedDocument =
+  | GraphCms_About
+  | GraphCms_Asset
+  | GraphCms_Contact
+  | GraphCms_Cta
+  | GraphCms_Event
+  | GraphCms_Faq
+  | GraphCms_FaqAccordion
+  | GraphCms_Gallery
+  | GraphCms_GalleryImage
+  | GraphCms_Hero
+  | GraphCms_Team
+  | GraphCms_TeamMember;
+
+export type GraphCms_ScheduledOperationConnection = {
+  distinct: Array<Scalars["String"]>;
+  edges: Array<GraphCms_ScheduledOperationEdge>;
+  group: Array<GraphCms_ScheduledOperationGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<GraphCms_ScheduledOperation>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type GraphCms_ScheduledOperationConnectionDistinctArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationConnectionGroupArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+  limit?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type GraphCms_ScheduledOperationConnectionMaxArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationConnectionMinArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationConnectionSumArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationEdge = {
+  next?: Maybe<GraphCms_ScheduledOperation>;
+  node: GraphCms_ScheduledOperation;
+  previous?: Maybe<GraphCms_ScheduledOperation>;
+};
+
+export enum GraphCms_ScheduledOperationFieldsEnum {
+  Children = "children",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  CreatedAt = "createdAt",
+  CreatedByChildren = "createdBy___children",
+  CreatedByChildrenChildren = "createdBy___children___children",
+  CreatedByChildrenChildrenChildren = "createdBy___children___children___children",
+  CreatedByChildrenChildrenId = "createdBy___children___children___id",
+  CreatedByChildrenId = "createdBy___children___id",
+  CreatedByChildrenInternalContent = "createdBy___children___internal___content",
+  CreatedByChildrenInternalContentDigest = "createdBy___children___internal___contentDigest",
+  CreatedByChildrenInternalDescription = "createdBy___children___internal___description",
+  CreatedByChildrenInternalFieldOwners = "createdBy___children___internal___fieldOwners",
+  CreatedByChildrenInternalIgnoreType = "createdBy___children___internal___ignoreType",
+  CreatedByChildrenInternalMediaType = "createdBy___children___internal___mediaType",
+  CreatedByChildrenInternalOwner = "createdBy___children___internal___owner",
+  CreatedByChildrenInternalType = "createdBy___children___internal___type",
+  CreatedByChildrenParentChildren = "createdBy___children___parent___children",
+  CreatedByChildrenParentId = "createdBy___children___parent___id",
+  CreatedByCreatedAt = "createdBy___createdAt",
+  CreatedById = "createdBy___id",
+  CreatedByInternalContent = "createdBy___internal___content",
+  CreatedByInternalContentDigest = "createdBy___internal___contentDigest",
+  CreatedByInternalDescription = "createdBy___internal___description",
+  CreatedByInternalFieldOwners = "createdBy___internal___fieldOwners",
+  CreatedByInternalIgnoreType = "createdBy___internal___ignoreType",
+  CreatedByInternalMediaType = "createdBy___internal___mediaType",
+  CreatedByInternalOwner = "createdBy___internal___owner",
+  CreatedByInternalType = "createdBy___internal___type",
+  CreatedByIsActive = "createdBy___isActive",
+  CreatedByKind = "createdBy___kind",
+  CreatedByName = "createdBy___name",
+  CreatedByParentChildren = "createdBy___parent___children",
+  CreatedByParentChildrenChildren = "createdBy___parent___children___children",
+  CreatedByParentChildrenId = "createdBy___parent___children___id",
+  CreatedByParentId = "createdBy___parent___id",
+  CreatedByParentInternalContent = "createdBy___parent___internal___content",
+  CreatedByParentInternalContentDigest = "createdBy___parent___internal___contentDigest",
+  CreatedByParentInternalDescription = "createdBy___parent___internal___description",
+  CreatedByParentInternalFieldOwners = "createdBy___parent___internal___fieldOwners",
+  CreatedByParentInternalIgnoreType = "createdBy___parent___internal___ignoreType",
+  CreatedByParentInternalMediaType = "createdBy___parent___internal___mediaType",
+  CreatedByParentInternalOwner = "createdBy___parent___internal___owner",
+  CreatedByParentInternalType = "createdBy___parent___internal___type",
+  CreatedByParentParentChildren = "createdBy___parent___parent___children",
+  CreatedByParentParentId = "createdBy___parent___parent___id",
+  CreatedByPicture = "createdBy___picture",
+  CreatedByPublishedAt = "createdBy___publishedAt",
+  CreatedByRemoteId = "createdBy___remoteId",
+  CreatedByRemoteTypeName = "createdBy___remoteTypeName",
+  CreatedByStage = "createdBy___stage",
+  CreatedByUpdatedAt = "createdBy___updatedAt",
+  Description = "description",
+  ErrorMessage = "errorMessage",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  PublishedAt = "publishedAt",
+  PublishedByChildren = "publishedBy___children",
+  PublishedByChildrenChildren = "publishedBy___children___children",
+  PublishedByChildrenChildrenChildren = "publishedBy___children___children___children",
+  PublishedByChildrenChildrenId = "publishedBy___children___children___id",
+  PublishedByChildrenId = "publishedBy___children___id",
+  PublishedByChildrenInternalContent = "publishedBy___children___internal___content",
+  PublishedByChildrenInternalContentDigest = "publishedBy___children___internal___contentDigest",
+  PublishedByChildrenInternalDescription = "publishedBy___children___internal___description",
+  PublishedByChildrenInternalFieldOwners = "publishedBy___children___internal___fieldOwners",
+  PublishedByChildrenInternalIgnoreType = "publishedBy___children___internal___ignoreType",
+  PublishedByChildrenInternalMediaType = "publishedBy___children___internal___mediaType",
+  PublishedByChildrenInternalOwner = "publishedBy___children___internal___owner",
+  PublishedByChildrenInternalType = "publishedBy___children___internal___type",
+  PublishedByChildrenParentChildren = "publishedBy___children___parent___children",
+  PublishedByChildrenParentId = "publishedBy___children___parent___id",
+  PublishedByCreatedAt = "publishedBy___createdAt",
+  PublishedById = "publishedBy___id",
+  PublishedByInternalContent = "publishedBy___internal___content",
+  PublishedByInternalContentDigest = "publishedBy___internal___contentDigest",
+  PublishedByInternalDescription = "publishedBy___internal___description",
+  PublishedByInternalFieldOwners = "publishedBy___internal___fieldOwners",
+  PublishedByInternalIgnoreType = "publishedBy___internal___ignoreType",
+  PublishedByInternalMediaType = "publishedBy___internal___mediaType",
+  PublishedByInternalOwner = "publishedBy___internal___owner",
+  PublishedByInternalType = "publishedBy___internal___type",
+  PublishedByIsActive = "publishedBy___isActive",
+  PublishedByKind = "publishedBy___kind",
+  PublishedByName = "publishedBy___name",
+  PublishedByParentChildren = "publishedBy___parent___children",
+  PublishedByParentChildrenChildren = "publishedBy___parent___children___children",
+  PublishedByParentChildrenId = "publishedBy___parent___children___id",
+  PublishedByParentId = "publishedBy___parent___id",
+  PublishedByParentInternalContent = "publishedBy___parent___internal___content",
+  PublishedByParentInternalContentDigest = "publishedBy___parent___internal___contentDigest",
+  PublishedByParentInternalDescription = "publishedBy___parent___internal___description",
+  PublishedByParentInternalFieldOwners = "publishedBy___parent___internal___fieldOwners",
+  PublishedByParentInternalIgnoreType = "publishedBy___parent___internal___ignoreType",
+  PublishedByParentInternalMediaType = "publishedBy___parent___internal___mediaType",
+  PublishedByParentInternalOwner = "publishedBy___parent___internal___owner",
+  PublishedByParentInternalType = "publishedBy___parent___internal___type",
+  PublishedByParentParentChildren = "publishedBy___parent___parent___children",
+  PublishedByParentParentId = "publishedBy___parent___parent___id",
+  PublishedByPicture = "publishedBy___picture",
+  PublishedByPublishedAt = "publishedBy___publishedAt",
+  PublishedByRemoteId = "publishedBy___remoteId",
+  PublishedByRemoteTypeName = "publishedBy___remoteTypeName",
+  PublishedByStage = "publishedBy___stage",
+  PublishedByUpdatedAt = "publishedBy___updatedAt",
+  RawPayload = "rawPayload",
+  ReleaseChildren = "release___children",
+  ReleaseChildrenChildren = "release___children___children",
+  ReleaseChildrenChildrenChildren = "release___children___children___children",
+  ReleaseChildrenChildrenId = "release___children___children___id",
+  ReleaseChildrenId = "release___children___id",
+  ReleaseChildrenInternalContent = "release___children___internal___content",
+  ReleaseChildrenInternalContentDigest = "release___children___internal___contentDigest",
+  ReleaseChildrenInternalDescription = "release___children___internal___description",
+  ReleaseChildrenInternalFieldOwners = "release___children___internal___fieldOwners",
+  ReleaseChildrenInternalIgnoreType = "release___children___internal___ignoreType",
+  ReleaseChildrenInternalMediaType = "release___children___internal___mediaType",
+  ReleaseChildrenInternalOwner = "release___children___internal___owner",
+  ReleaseChildrenInternalType = "release___children___internal___type",
+  ReleaseChildrenParentChildren = "release___children___parent___children",
+  ReleaseChildrenParentId = "release___children___parent___id",
+  ReleaseCreatedAt = "release___createdAt",
+  ReleaseCreatedByChildren = "release___createdBy___children",
+  ReleaseCreatedByChildrenChildren = "release___createdBy___children___children",
+  ReleaseCreatedByChildrenId = "release___createdBy___children___id",
+  ReleaseCreatedByCreatedAt = "release___createdBy___createdAt",
+  ReleaseCreatedById = "release___createdBy___id",
+  ReleaseCreatedByInternalContent = "release___createdBy___internal___content",
+  ReleaseCreatedByInternalContentDigest = "release___createdBy___internal___contentDigest",
+  ReleaseCreatedByInternalDescription = "release___createdBy___internal___description",
+  ReleaseCreatedByInternalFieldOwners = "release___createdBy___internal___fieldOwners",
+  ReleaseCreatedByInternalIgnoreType = "release___createdBy___internal___ignoreType",
+  ReleaseCreatedByInternalMediaType = "release___createdBy___internal___mediaType",
+  ReleaseCreatedByInternalOwner = "release___createdBy___internal___owner",
+  ReleaseCreatedByInternalType = "release___createdBy___internal___type",
+  ReleaseCreatedByIsActive = "release___createdBy___isActive",
+  ReleaseCreatedByKind = "release___createdBy___kind",
+  ReleaseCreatedByName = "release___createdBy___name",
+  ReleaseCreatedByParentChildren = "release___createdBy___parent___children",
+  ReleaseCreatedByParentId = "release___createdBy___parent___id",
+  ReleaseCreatedByPicture = "release___createdBy___picture",
+  ReleaseCreatedByPublishedAt = "release___createdBy___publishedAt",
+  ReleaseCreatedByRemoteId = "release___createdBy___remoteId",
+  ReleaseCreatedByRemoteTypeName = "release___createdBy___remoteTypeName",
+  ReleaseCreatedByStage = "release___createdBy___stage",
+  ReleaseCreatedByUpdatedAt = "release___createdBy___updatedAt",
+  ReleaseDescription = "release___description",
+  ReleaseErrorMessage = "release___errorMessage",
+  ReleaseId = "release___id",
+  ReleaseInternalContent = "release___internal___content",
+  ReleaseInternalContentDigest = "release___internal___contentDigest",
+  ReleaseInternalDescription = "release___internal___description",
+  ReleaseInternalFieldOwners = "release___internal___fieldOwners",
+  ReleaseInternalIgnoreType = "release___internal___ignoreType",
+  ReleaseInternalMediaType = "release___internal___mediaType",
+  ReleaseInternalOwner = "release___internal___owner",
+  ReleaseInternalType = "release___internal___type",
+  ReleaseIsActive = "release___isActive",
+  ReleaseIsImplicit = "release___isImplicit",
+  ReleaseOperations = "release___operations",
+  ReleaseOperationsChildren = "release___operations___children",
+  ReleaseOperationsChildrenChildren = "release___operations___children___children",
+  ReleaseOperationsChildrenId = "release___operations___children___id",
+  ReleaseOperationsCreatedAt = "release___operations___createdAt",
+  ReleaseOperationsCreatedByChildren = "release___operations___createdBy___children",
+  ReleaseOperationsCreatedByCreatedAt = "release___operations___createdBy___createdAt",
+  ReleaseOperationsCreatedById = "release___operations___createdBy___id",
+  ReleaseOperationsCreatedByIsActive = "release___operations___createdBy___isActive",
+  ReleaseOperationsCreatedByKind = "release___operations___createdBy___kind",
+  ReleaseOperationsCreatedByName = "release___operations___createdBy___name",
+  ReleaseOperationsCreatedByPicture = "release___operations___createdBy___picture",
+  ReleaseOperationsCreatedByPublishedAt = "release___operations___createdBy___publishedAt",
+  ReleaseOperationsCreatedByRemoteId = "release___operations___createdBy___remoteId",
+  ReleaseOperationsCreatedByRemoteTypeName = "release___operations___createdBy___remoteTypeName",
+  ReleaseOperationsCreatedByStage = "release___operations___createdBy___stage",
+  ReleaseOperationsCreatedByUpdatedAt = "release___operations___createdBy___updatedAt",
+  ReleaseOperationsDescription = "release___operations___description",
+  ReleaseOperationsErrorMessage = "release___operations___errorMessage",
+  ReleaseOperationsId = "release___operations___id",
+  ReleaseOperationsInternalContent = "release___operations___internal___content",
+  ReleaseOperationsInternalContentDigest = "release___operations___internal___contentDigest",
+  ReleaseOperationsInternalDescription = "release___operations___internal___description",
+  ReleaseOperationsInternalFieldOwners = "release___operations___internal___fieldOwners",
+  ReleaseOperationsInternalIgnoreType = "release___operations___internal___ignoreType",
+  ReleaseOperationsInternalMediaType = "release___operations___internal___mediaType",
+  ReleaseOperationsInternalOwner = "release___operations___internal___owner",
+  ReleaseOperationsInternalType = "release___operations___internal___type",
+  ReleaseOperationsParentChildren = "release___operations___parent___children",
+  ReleaseOperationsParentId = "release___operations___parent___id",
+  ReleaseOperationsPublishedAt = "release___operations___publishedAt",
+  ReleaseOperationsPublishedByChildren = "release___operations___publishedBy___children",
+  ReleaseOperationsPublishedByCreatedAt = "release___operations___publishedBy___createdAt",
+  ReleaseOperationsPublishedById = "release___operations___publishedBy___id",
+  ReleaseOperationsPublishedByIsActive = "release___operations___publishedBy___isActive",
+  ReleaseOperationsPublishedByKind = "release___operations___publishedBy___kind",
+  ReleaseOperationsPublishedByName = "release___operations___publishedBy___name",
+  ReleaseOperationsPublishedByPicture = "release___operations___publishedBy___picture",
+  ReleaseOperationsPublishedByPublishedAt = "release___operations___publishedBy___publishedAt",
+  ReleaseOperationsPublishedByRemoteId = "release___operations___publishedBy___remoteId",
+  ReleaseOperationsPublishedByRemoteTypeName = "release___operations___publishedBy___remoteTypeName",
+  ReleaseOperationsPublishedByStage = "release___operations___publishedBy___stage",
+  ReleaseOperationsPublishedByUpdatedAt = "release___operations___publishedBy___updatedAt",
+  ReleaseOperationsRawPayload = "release___operations___rawPayload",
+  ReleaseOperationsReleaseChildren = "release___operations___release___children",
+  ReleaseOperationsReleaseCreatedAt = "release___operations___release___createdAt",
+  ReleaseOperationsReleaseDescription = "release___operations___release___description",
+  ReleaseOperationsReleaseErrorMessage = "release___operations___release___errorMessage",
+  ReleaseOperationsReleaseId = "release___operations___release___id",
+  ReleaseOperationsReleaseIsActive = "release___operations___release___isActive",
+  ReleaseOperationsReleaseIsImplicit = "release___operations___release___isImplicit",
+  ReleaseOperationsReleaseOperations = "release___operations___release___operations",
+  ReleaseOperationsReleasePublishedAt = "release___operations___release___publishedAt",
+  ReleaseOperationsReleaseReleaseAt = "release___operations___release___releaseAt",
+  ReleaseOperationsReleaseRemoteId = "release___operations___release___remoteId",
+  ReleaseOperationsReleaseRemoteTypeName = "release___operations___release___remoteTypeName",
+  ReleaseOperationsReleaseStage = "release___operations___release___stage",
+  ReleaseOperationsReleaseStatus = "release___operations___release___status",
+  ReleaseOperationsReleaseTitle = "release___operations___release___title",
+  ReleaseOperationsReleaseUpdatedAt = "release___operations___release___updatedAt",
+  ReleaseOperationsRemoteId = "release___operations___remoteId",
+  ReleaseOperationsRemoteTypeName = "release___operations___remoteTypeName",
+  ReleaseOperationsStage = "release___operations___stage",
+  ReleaseOperationsStatus = "release___operations___status",
+  ReleaseOperationsUpdatedAt = "release___operations___updatedAt",
+  ReleaseOperationsUpdatedByChildren = "release___operations___updatedBy___children",
+  ReleaseOperationsUpdatedByCreatedAt = "release___operations___updatedBy___createdAt",
+  ReleaseOperationsUpdatedById = "release___operations___updatedBy___id",
+  ReleaseOperationsUpdatedByIsActive = "release___operations___updatedBy___isActive",
+  ReleaseOperationsUpdatedByKind = "release___operations___updatedBy___kind",
+  ReleaseOperationsUpdatedByName = "release___operations___updatedBy___name",
+  ReleaseOperationsUpdatedByPicture = "release___operations___updatedBy___picture",
+  ReleaseOperationsUpdatedByPublishedAt = "release___operations___updatedBy___publishedAt",
+  ReleaseOperationsUpdatedByRemoteId = "release___operations___updatedBy___remoteId",
+  ReleaseOperationsUpdatedByRemoteTypeName = "release___operations___updatedBy___remoteTypeName",
+  ReleaseOperationsUpdatedByStage = "release___operations___updatedBy___stage",
+  ReleaseOperationsUpdatedByUpdatedAt = "release___operations___updatedBy___updatedAt",
+  ReleaseParentChildren = "release___parent___children",
+  ReleaseParentChildrenChildren = "release___parent___children___children",
+  ReleaseParentChildrenId = "release___parent___children___id",
+  ReleaseParentId = "release___parent___id",
+  ReleaseParentInternalContent = "release___parent___internal___content",
+  ReleaseParentInternalContentDigest = "release___parent___internal___contentDigest",
+  ReleaseParentInternalDescription = "release___parent___internal___description",
+  ReleaseParentInternalFieldOwners = "release___parent___internal___fieldOwners",
+  ReleaseParentInternalIgnoreType = "release___parent___internal___ignoreType",
+  ReleaseParentInternalMediaType = "release___parent___internal___mediaType",
+  ReleaseParentInternalOwner = "release___parent___internal___owner",
+  ReleaseParentInternalType = "release___parent___internal___type",
+  ReleaseParentParentChildren = "release___parent___parent___children",
+  ReleaseParentParentId = "release___parent___parent___id",
+  ReleasePublishedAt = "release___publishedAt",
+  ReleasePublishedByChildren = "release___publishedBy___children",
+  ReleasePublishedByChildrenChildren = "release___publishedBy___children___children",
+  ReleasePublishedByChildrenId = "release___publishedBy___children___id",
+  ReleasePublishedByCreatedAt = "release___publishedBy___createdAt",
+  ReleasePublishedById = "release___publishedBy___id",
+  ReleasePublishedByInternalContent = "release___publishedBy___internal___content",
+  ReleasePublishedByInternalContentDigest = "release___publishedBy___internal___contentDigest",
+  ReleasePublishedByInternalDescription = "release___publishedBy___internal___description",
+  ReleasePublishedByInternalFieldOwners = "release___publishedBy___internal___fieldOwners",
+  ReleasePublishedByInternalIgnoreType = "release___publishedBy___internal___ignoreType",
+  ReleasePublishedByInternalMediaType = "release___publishedBy___internal___mediaType",
+  ReleasePublishedByInternalOwner = "release___publishedBy___internal___owner",
+  ReleasePublishedByInternalType = "release___publishedBy___internal___type",
+  ReleasePublishedByIsActive = "release___publishedBy___isActive",
+  ReleasePublishedByKind = "release___publishedBy___kind",
+  ReleasePublishedByName = "release___publishedBy___name",
+  ReleasePublishedByParentChildren = "release___publishedBy___parent___children",
+  ReleasePublishedByParentId = "release___publishedBy___parent___id",
+  ReleasePublishedByPicture = "release___publishedBy___picture",
+  ReleasePublishedByPublishedAt = "release___publishedBy___publishedAt",
+  ReleasePublishedByRemoteId = "release___publishedBy___remoteId",
+  ReleasePublishedByRemoteTypeName = "release___publishedBy___remoteTypeName",
+  ReleasePublishedByStage = "release___publishedBy___stage",
+  ReleasePublishedByUpdatedAt = "release___publishedBy___updatedAt",
+  ReleaseReleaseAt = "release___releaseAt",
+  ReleaseRemoteId = "release___remoteId",
+  ReleaseRemoteTypeName = "release___remoteTypeName",
+  ReleaseStage = "release___stage",
+  ReleaseStatus = "release___status",
+  ReleaseTitle = "release___title",
+  ReleaseUpdatedAt = "release___updatedAt",
+  ReleaseUpdatedByChildren = "release___updatedBy___children",
+  ReleaseUpdatedByChildrenChildren = "release___updatedBy___children___children",
+  ReleaseUpdatedByChildrenId = "release___updatedBy___children___id",
+  ReleaseUpdatedByCreatedAt = "release___updatedBy___createdAt",
+  ReleaseUpdatedById = "release___updatedBy___id",
+  ReleaseUpdatedByInternalContent = "release___updatedBy___internal___content",
+  ReleaseUpdatedByInternalContentDigest = "release___updatedBy___internal___contentDigest",
+  ReleaseUpdatedByInternalDescription = "release___updatedBy___internal___description",
+  ReleaseUpdatedByInternalFieldOwners = "release___updatedBy___internal___fieldOwners",
+  ReleaseUpdatedByInternalIgnoreType = "release___updatedBy___internal___ignoreType",
+  ReleaseUpdatedByInternalMediaType = "release___updatedBy___internal___mediaType",
+  ReleaseUpdatedByInternalOwner = "release___updatedBy___internal___owner",
+  ReleaseUpdatedByInternalType = "release___updatedBy___internal___type",
+  ReleaseUpdatedByIsActive = "release___updatedBy___isActive",
+  ReleaseUpdatedByKind = "release___updatedBy___kind",
+  ReleaseUpdatedByName = "release___updatedBy___name",
+  ReleaseUpdatedByParentChildren = "release___updatedBy___parent___children",
+  ReleaseUpdatedByParentId = "release___updatedBy___parent___id",
+  ReleaseUpdatedByPicture = "release___updatedBy___picture",
+  ReleaseUpdatedByPublishedAt = "release___updatedBy___publishedAt",
+  ReleaseUpdatedByRemoteId = "release___updatedBy___remoteId",
+  ReleaseUpdatedByRemoteTypeName = "release___updatedBy___remoteTypeName",
+  ReleaseUpdatedByStage = "release___updatedBy___stage",
+  ReleaseUpdatedByUpdatedAt = "release___updatedBy___updatedAt",
+  RemoteId = "remoteId",
+  RemoteTypeName = "remoteTypeName",
+  Stage = "stage",
+  Status = "status",
+  UpdatedAt = "updatedAt",
+  UpdatedByChildren = "updatedBy___children",
+  UpdatedByChildrenChildren = "updatedBy___children___children",
+  UpdatedByChildrenChildrenChildren = "updatedBy___children___children___children",
+  UpdatedByChildrenChildrenId = "updatedBy___children___children___id",
+  UpdatedByChildrenId = "updatedBy___children___id",
+  UpdatedByChildrenInternalContent = "updatedBy___children___internal___content",
+  UpdatedByChildrenInternalContentDigest = "updatedBy___children___internal___contentDigest",
+  UpdatedByChildrenInternalDescription = "updatedBy___children___internal___description",
+  UpdatedByChildrenInternalFieldOwners = "updatedBy___children___internal___fieldOwners",
+  UpdatedByChildrenInternalIgnoreType = "updatedBy___children___internal___ignoreType",
+  UpdatedByChildrenInternalMediaType = "updatedBy___children___internal___mediaType",
+  UpdatedByChildrenInternalOwner = "updatedBy___children___internal___owner",
+  UpdatedByChildrenInternalType = "updatedBy___children___internal___type",
+  UpdatedByChildrenParentChildren = "updatedBy___children___parent___children",
+  UpdatedByChildrenParentId = "updatedBy___children___parent___id",
+  UpdatedByCreatedAt = "updatedBy___createdAt",
+  UpdatedById = "updatedBy___id",
+  UpdatedByInternalContent = "updatedBy___internal___content",
+  UpdatedByInternalContentDigest = "updatedBy___internal___contentDigest",
+  UpdatedByInternalDescription = "updatedBy___internal___description",
+  UpdatedByInternalFieldOwners = "updatedBy___internal___fieldOwners",
+  UpdatedByInternalIgnoreType = "updatedBy___internal___ignoreType",
+  UpdatedByInternalMediaType = "updatedBy___internal___mediaType",
+  UpdatedByInternalOwner = "updatedBy___internal___owner",
+  UpdatedByInternalType = "updatedBy___internal___type",
+  UpdatedByIsActive = "updatedBy___isActive",
+  UpdatedByKind = "updatedBy___kind",
+  UpdatedByName = "updatedBy___name",
+  UpdatedByParentChildren = "updatedBy___parent___children",
+  UpdatedByParentChildrenChildren = "updatedBy___parent___children___children",
+  UpdatedByParentChildrenId = "updatedBy___parent___children___id",
+  UpdatedByParentId = "updatedBy___parent___id",
+  UpdatedByParentInternalContent = "updatedBy___parent___internal___content",
+  UpdatedByParentInternalContentDigest = "updatedBy___parent___internal___contentDigest",
+  UpdatedByParentInternalDescription = "updatedBy___parent___internal___description",
+  UpdatedByParentInternalFieldOwners = "updatedBy___parent___internal___fieldOwners",
+  UpdatedByParentInternalIgnoreType = "updatedBy___parent___internal___ignoreType",
+  UpdatedByParentInternalMediaType = "updatedBy___parent___internal___mediaType",
+  UpdatedByParentInternalOwner = "updatedBy___parent___internal___owner",
+  UpdatedByParentInternalType = "updatedBy___parent___internal___type",
+  UpdatedByParentParentChildren = "updatedBy___parent___parent___children",
+  UpdatedByParentParentId = "updatedBy___parent___parent___id",
+  UpdatedByPicture = "updatedBy___picture",
+  UpdatedByPublishedAt = "updatedBy___publishedAt",
+  UpdatedByRemoteId = "updatedBy___remoteId",
+  UpdatedByRemoteTypeName = "updatedBy___remoteTypeName",
+  UpdatedByStage = "updatedBy___stage",
+  UpdatedByUpdatedAt = "updatedBy___updatedAt",
+}
+
+export type GraphCms_ScheduledOperationFilterInput = {
+  children?: Maybe<NodeFilterListInput>;
+  createdAt?: Maybe<JsonQueryOperatorInput>;
+  createdBy?: Maybe<GraphCms_UserFilterInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  errorMessage?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  internal?: Maybe<InternalFilterInput>;
+  parent?: Maybe<NodeFilterInput>;
+  publishedAt?: Maybe<JsonQueryOperatorInput>;
+  publishedBy?: Maybe<GraphCms_UserFilterInput>;
+  rawPayload?: Maybe<JsonQueryOperatorInput>;
+  release?: Maybe<GraphCms_ScheduledReleaseFilterInput>;
+  remoteId?: Maybe<IdQueryOperatorInput>;
+  remoteTypeName?: Maybe<StringQueryOperatorInput>;
+  stage?: Maybe<GraphCms_StageQueryOperatorInput>;
+  status?: Maybe<GraphCms_ScheduledOperationStatusQueryOperatorInput>;
+  updatedAt?: Maybe<JsonQueryOperatorInput>;
+  updatedBy?: Maybe<GraphCms_UserFilterInput>;
+};
+
+export type GraphCms_ScheduledOperationFilterListInput = {
+  elemMatch?: Maybe<GraphCms_ScheduledOperationFilterInput>;
+};
+
+export type GraphCms_ScheduledOperationGroupConnection = {
+  distinct: Array<Scalars["String"]>;
+  edges: Array<GraphCms_ScheduledOperationEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<GraphCms_ScheduledOperationGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<GraphCms_ScheduledOperation>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type GraphCms_ScheduledOperationGroupConnectionDistinctArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationGroupConnectionGroupArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+  limit?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type GraphCms_ScheduledOperationGroupConnectionMaxArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationGroupConnectionMinArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationGroupConnectionSumArgs = {
+  field: GraphCms_ScheduledOperationFieldsEnum;
+};
+
+export type GraphCms_ScheduledOperationSortInput = {
+  fields?: Maybe<Array<Maybe<GraphCms_ScheduledOperationFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export enum GraphCms_ScheduledOperationStatus {
+  Canceled = "CANCELED",
+  Completed = "COMPLETED",
+  Failed = "FAILED",
+  InProgress = "IN_PROGRESS",
+  Pending = "PENDING",
+}
+
+export type GraphCms_ScheduledOperationStatusQueryOperatorInput = {
+  eq?: Maybe<GraphCms_ScheduledOperationStatus>;
+  in?: Maybe<Array<Maybe<GraphCms_ScheduledOperationStatus>>>;
+  ne?: Maybe<GraphCms_ScheduledOperationStatus>;
+  nin?: Maybe<Array<Maybe<GraphCms_ScheduledOperationStatus>>>;
+};
+
+export type GraphCms_ScheduledRelease = Node & {
+  children: Array<Node>;
+  createdAt: Scalars["JSON"];
+  createdBy?: Maybe<GraphCms_User>;
+  description?: Maybe<Scalars["String"]>;
+  errorMessage?: Maybe<Scalars["String"]>;
+  id: Scalars["ID"];
+  internal: Internal;
+  isActive: Scalars["Boolean"];
+  isImplicit: Scalars["Boolean"];
+  operations: Array<GraphCms_ScheduledOperation>;
+  parent?: Maybe<Node>;
+  publishedAt?: Maybe<Scalars["JSON"]>;
+  publishedBy?: Maybe<GraphCms_User>;
+  releaseAt?: Maybe<Scalars["JSON"]>;
+  remoteId: Scalars["ID"];
+  remoteTypeName: Scalars["String"];
+  stage: GraphCms_Stage;
+  status: GraphCms_ScheduledReleaseStatus;
+  title?: Maybe<Scalars["String"]>;
+  updatedAt: Scalars["JSON"];
+  updatedBy?: Maybe<GraphCms_User>;
+};
+
+export type GraphCms_ScheduledReleaseConnection = {
+  distinct: Array<Scalars["String"]>;
+  edges: Array<GraphCms_ScheduledReleaseEdge>;
+  group: Array<GraphCms_ScheduledReleaseGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<GraphCms_ScheduledRelease>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type GraphCms_ScheduledReleaseConnectionDistinctArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseConnectionGroupArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+  limit?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type GraphCms_ScheduledReleaseConnectionMaxArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseConnectionMinArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseConnectionSumArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseEdge = {
+  next?: Maybe<GraphCms_ScheduledRelease>;
+  node: GraphCms_ScheduledRelease;
+  previous?: Maybe<GraphCms_ScheduledRelease>;
+};
+
+export enum GraphCms_ScheduledReleaseFieldsEnum {
+  Children = "children",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenId = "children___id",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentParentId = "children___parent___parent___id",
+  CreatedAt = "createdAt",
+  CreatedByChildren = "createdBy___children",
+  CreatedByChildrenChildren = "createdBy___children___children",
+  CreatedByChildrenChildrenChildren = "createdBy___children___children___children",
+  CreatedByChildrenChildrenId = "createdBy___children___children___id",
+  CreatedByChildrenId = "createdBy___children___id",
+  CreatedByChildrenInternalContent = "createdBy___children___internal___content",
+  CreatedByChildrenInternalContentDigest = "createdBy___children___internal___contentDigest",
+  CreatedByChildrenInternalDescription = "createdBy___children___internal___description",
+  CreatedByChildrenInternalFieldOwners = "createdBy___children___internal___fieldOwners",
+  CreatedByChildrenInternalIgnoreType = "createdBy___children___internal___ignoreType",
+  CreatedByChildrenInternalMediaType = "createdBy___children___internal___mediaType",
+  CreatedByChildrenInternalOwner = "createdBy___children___internal___owner",
+  CreatedByChildrenInternalType = "createdBy___children___internal___type",
+  CreatedByChildrenParentChildren = "createdBy___children___parent___children",
+  CreatedByChildrenParentId = "createdBy___children___parent___id",
+  CreatedByCreatedAt = "createdBy___createdAt",
+  CreatedById = "createdBy___id",
+  CreatedByInternalContent = "createdBy___internal___content",
+  CreatedByInternalContentDigest = "createdBy___internal___contentDigest",
+  CreatedByInternalDescription = "createdBy___internal___description",
+  CreatedByInternalFieldOwners = "createdBy___internal___fieldOwners",
+  CreatedByInternalIgnoreType = "createdBy___internal___ignoreType",
+  CreatedByInternalMediaType = "createdBy___internal___mediaType",
+  CreatedByInternalOwner = "createdBy___internal___owner",
+  CreatedByInternalType = "createdBy___internal___type",
+  CreatedByIsActive = "createdBy___isActive",
+  CreatedByKind = "createdBy___kind",
+  CreatedByName = "createdBy___name",
+  CreatedByParentChildren = "createdBy___parent___children",
+  CreatedByParentChildrenChildren = "createdBy___parent___children___children",
+  CreatedByParentChildrenId = "createdBy___parent___children___id",
+  CreatedByParentId = "createdBy___parent___id",
+  CreatedByParentInternalContent = "createdBy___parent___internal___content",
+  CreatedByParentInternalContentDigest = "createdBy___parent___internal___contentDigest",
+  CreatedByParentInternalDescription = "createdBy___parent___internal___description",
+  CreatedByParentInternalFieldOwners = "createdBy___parent___internal___fieldOwners",
+  CreatedByParentInternalIgnoreType = "createdBy___parent___internal___ignoreType",
+  CreatedByParentInternalMediaType = "createdBy___parent___internal___mediaType",
+  CreatedByParentInternalOwner = "createdBy___parent___internal___owner",
+  CreatedByParentInternalType = "createdBy___parent___internal___type",
+  CreatedByParentParentChildren = "createdBy___parent___parent___children",
+  CreatedByParentParentId = "createdBy___parent___parent___id",
+  CreatedByPicture = "createdBy___picture",
+  CreatedByPublishedAt = "createdBy___publishedAt",
+  CreatedByRemoteId = "createdBy___remoteId",
+  CreatedByRemoteTypeName = "createdBy___remoteTypeName",
+  CreatedByStage = "createdBy___stage",
+  CreatedByUpdatedAt = "createdBy___updatedAt",
+  Description = "description",
+  ErrorMessage = "errorMessage",
+  Id = "id",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+  IsActive = "isActive",
+  IsImplicit = "isImplicit",
+  Operations = "operations",
+  OperationsChildren = "operations___children",
+  OperationsChildrenChildren = "operations___children___children",
+  OperationsChildrenChildrenChildren = "operations___children___children___children",
+  OperationsChildrenChildrenId = "operations___children___children___id",
+  OperationsChildrenId = "operations___children___id",
+  OperationsChildrenInternalContent = "operations___children___internal___content",
+  OperationsChildrenInternalContentDigest = "operations___children___internal___contentDigest",
+  OperationsChildrenInternalDescription = "operations___children___internal___description",
+  OperationsChildrenInternalFieldOwners = "operations___children___internal___fieldOwners",
+  OperationsChildrenInternalIgnoreType = "operations___children___internal___ignoreType",
+  OperationsChildrenInternalMediaType = "operations___children___internal___mediaType",
+  OperationsChildrenInternalOwner = "operations___children___internal___owner",
+  OperationsChildrenInternalType = "operations___children___internal___type",
+  OperationsChildrenParentChildren = "operations___children___parent___children",
+  OperationsChildrenParentId = "operations___children___parent___id",
+  OperationsCreatedAt = "operations___createdAt",
+  OperationsCreatedByChildren = "operations___createdBy___children",
+  OperationsCreatedByChildrenChildren = "operations___createdBy___children___children",
+  OperationsCreatedByChildrenId = "operations___createdBy___children___id",
+  OperationsCreatedByCreatedAt = "operations___createdBy___createdAt",
+  OperationsCreatedById = "operations___createdBy___id",
+  OperationsCreatedByInternalContent = "operations___createdBy___internal___content",
+  OperationsCreatedByInternalContentDigest = "operations___createdBy___internal___contentDigest",
+  OperationsCreatedByInternalDescription = "operations___createdBy___internal___description",
+  OperationsCreatedByInternalFieldOwners = "operations___createdBy___internal___fieldOwners",
+  OperationsCreatedByInternalIgnoreType = "operations___createdBy___internal___ignoreType",
+  OperationsCreatedByInternalMediaType = "operations___createdBy___internal___mediaType",
+  OperationsCreatedByInternalOwner = "operations___createdBy___internal___owner",
+  OperationsCreatedByInternalType = "operations___createdBy___internal___type",
+  OperationsCreatedByIsActive = "operations___createdBy___isActive",
+  OperationsCreatedByKind = "operations___createdBy___kind",
+  OperationsCreatedByName = "operations___createdBy___name",
+  OperationsCreatedByParentChildren = "operations___createdBy___parent___children",
+  OperationsCreatedByParentId = "operations___createdBy___parent___id",
+  OperationsCreatedByPicture = "operations___createdBy___picture",
+  OperationsCreatedByPublishedAt = "operations___createdBy___publishedAt",
+  OperationsCreatedByRemoteId = "operations___createdBy___remoteId",
+  OperationsCreatedByRemoteTypeName = "operations___createdBy___remoteTypeName",
+  OperationsCreatedByStage = "operations___createdBy___stage",
+  OperationsCreatedByUpdatedAt = "operations___createdBy___updatedAt",
+  OperationsDescription = "operations___description",
+  OperationsErrorMessage = "operations___errorMessage",
+  OperationsId = "operations___id",
+  OperationsInternalContent = "operations___internal___content",
+  OperationsInternalContentDigest = "operations___internal___contentDigest",
+  OperationsInternalDescription = "operations___internal___description",
+  OperationsInternalFieldOwners = "operations___internal___fieldOwners",
+  OperationsInternalIgnoreType = "operations___internal___ignoreType",
+  OperationsInternalMediaType = "operations___internal___mediaType",
+  OperationsInternalOwner = "operations___internal___owner",
+  OperationsInternalType = "operations___internal___type",
+  OperationsParentChildren = "operations___parent___children",
+  OperationsParentChildrenChildren = "operations___parent___children___children",
+  OperationsParentChildrenId = "operations___parent___children___id",
+  OperationsParentId = "operations___parent___id",
+  OperationsParentInternalContent = "operations___parent___internal___content",
+  OperationsParentInternalContentDigest = "operations___parent___internal___contentDigest",
+  OperationsParentInternalDescription = "operations___parent___internal___description",
+  OperationsParentInternalFieldOwners = "operations___parent___internal___fieldOwners",
+  OperationsParentInternalIgnoreType = "operations___parent___internal___ignoreType",
+  OperationsParentInternalMediaType = "operations___parent___internal___mediaType",
+  OperationsParentInternalOwner = "operations___parent___internal___owner",
+  OperationsParentInternalType = "operations___parent___internal___type",
+  OperationsParentParentChildren = "operations___parent___parent___children",
+  OperationsParentParentId = "operations___parent___parent___id",
+  OperationsPublishedAt = "operations___publishedAt",
+  OperationsPublishedByChildren = "operations___publishedBy___children",
+  OperationsPublishedByChildrenChildren = "operations___publishedBy___children___children",
+  OperationsPublishedByChildrenId = "operations___publishedBy___children___id",
+  OperationsPublishedByCreatedAt = "operations___publishedBy___createdAt",
+  OperationsPublishedById = "operations___publishedBy___id",
+  OperationsPublishedByInternalContent = "operations___publishedBy___internal___content",
+  OperationsPublishedByInternalContentDigest = "operations___publishedBy___internal___contentDigest",
+  OperationsPublishedByInternalDescription = "operations___publishedBy___internal___description",
+  OperationsPublishedByInternalFieldOwners = "operations___publishedBy___internal___fieldOwners",
+  OperationsPublishedByInternalIgnoreType = "operations___publishedBy___internal___ignoreType",
+  OperationsPublishedByInternalMediaType = "operations___publishedBy___internal___mediaType",
+  OperationsPublishedByInternalOwner = "operations___publishedBy___internal___owner",
+  OperationsPublishedByInternalType = "operations___publishedBy___internal___type",
+  OperationsPublishedByIsActive = "operations___publishedBy___isActive",
+  OperationsPublishedByKind = "operations___publishedBy___kind",
+  OperationsPublishedByName = "operations___publishedBy___name",
+  OperationsPublishedByParentChildren = "operations___publishedBy___parent___children",
+  OperationsPublishedByParentId = "operations___publishedBy___parent___id",
+  OperationsPublishedByPicture = "operations___publishedBy___picture",
+  OperationsPublishedByPublishedAt = "operations___publishedBy___publishedAt",
+  OperationsPublishedByRemoteId = "operations___publishedBy___remoteId",
+  OperationsPublishedByRemoteTypeName = "operations___publishedBy___remoteTypeName",
+  OperationsPublishedByStage = "operations___publishedBy___stage",
+  OperationsPublishedByUpdatedAt = "operations___publishedBy___updatedAt",
+  OperationsRawPayload = "operations___rawPayload",
+  OperationsReleaseChildren = "operations___release___children",
+  OperationsReleaseChildrenChildren = "operations___release___children___children",
+  OperationsReleaseChildrenId = "operations___release___children___id",
+  OperationsReleaseCreatedAt = "operations___release___createdAt",
+  OperationsReleaseCreatedByChildren = "operations___release___createdBy___children",
+  OperationsReleaseCreatedByCreatedAt = "operations___release___createdBy___createdAt",
+  OperationsReleaseCreatedById = "operations___release___createdBy___id",
+  OperationsReleaseCreatedByIsActive = "operations___release___createdBy___isActive",
+  OperationsReleaseCreatedByKind = "operations___release___createdBy___kind",
+  OperationsReleaseCreatedByName = "operations___release___createdBy___name",
+  OperationsReleaseCreatedByPicture = "operations___release___createdBy___picture",
+  OperationsReleaseCreatedByPublishedAt = "operations___release___createdBy___publishedAt",
+  OperationsReleaseCreatedByRemoteId = "operations___release___createdBy___remoteId",
+  OperationsReleaseCreatedByRemoteTypeName = "operations___release___createdBy___remoteTypeName",
+  OperationsReleaseCreatedByStage = "operations___release___createdBy___stage",
+  OperationsReleaseCreatedByUpdatedAt = "operations___release___createdBy___updatedAt",
+  OperationsReleaseDescription = "operations___release___description",
+  OperationsReleaseErrorMessage = "operations___release___errorMessage",
+  OperationsReleaseId = "operations___release___id",
+  OperationsReleaseInternalContent = "operations___release___internal___content",
+  OperationsReleaseInternalContentDigest = "operations___release___internal___contentDigest",
+  OperationsReleaseInternalDescription = "operations___release___internal___description",
+  OperationsReleaseInternalFieldOwners = "operations___release___internal___fieldOwners",
+  OperationsReleaseInternalIgnoreType = "operations___release___internal___ignoreType",
+  OperationsReleaseInternalMediaType = "operations___release___internal___mediaType",
+  OperationsReleaseInternalOwner = "operations___release___internal___owner",
+  OperationsReleaseInternalType = "operations___release___internal___type",
+  OperationsReleaseIsActive = "operations___release___isActive",
+  OperationsReleaseIsImplicit = "operations___release___isImplicit",
+  OperationsReleaseOperations = "operations___release___operations",
+  OperationsReleaseOperationsChildren = "operations___release___operations___children",
+  OperationsReleaseOperationsCreatedAt = "operations___release___operations___createdAt",
+  OperationsReleaseOperationsDescription = "operations___release___operations___description",
+  OperationsReleaseOperationsErrorMessage = "operations___release___operations___errorMessage",
+  OperationsReleaseOperationsId = "operations___release___operations___id",
+  OperationsReleaseOperationsPublishedAt = "operations___release___operations___publishedAt",
+  OperationsReleaseOperationsRawPayload = "operations___release___operations___rawPayload",
+  OperationsReleaseOperationsRemoteId = "operations___release___operations___remoteId",
+  OperationsReleaseOperationsRemoteTypeName = "operations___release___operations___remoteTypeName",
+  OperationsReleaseOperationsStage = "operations___release___operations___stage",
+  OperationsReleaseOperationsStatus = "operations___release___operations___status",
+  OperationsReleaseOperationsUpdatedAt = "operations___release___operations___updatedAt",
+  OperationsReleaseParentChildren = "operations___release___parent___children",
+  OperationsReleaseParentId = "operations___release___parent___id",
+  OperationsReleasePublishedAt = "operations___release___publishedAt",
+  OperationsReleasePublishedByChildren = "operations___release___publishedBy___children",
+  OperationsReleasePublishedByCreatedAt = "operations___release___publishedBy___createdAt",
+  OperationsReleasePublishedById = "operations___release___publishedBy___id",
+  OperationsReleasePublishedByIsActive = "operations___release___publishedBy___isActive",
+  OperationsReleasePublishedByKind = "operations___release___publishedBy___kind",
+  OperationsReleasePublishedByName = "operations___release___publishedBy___name",
+  OperationsReleasePublishedByPicture = "operations___release___publishedBy___picture",
+  OperationsReleasePublishedByPublishedAt = "operations___release___publishedBy___publishedAt",
+  OperationsReleasePublishedByRemoteId = "operations___release___publishedBy___remoteId",
+  OperationsReleasePublishedByRemoteTypeName = "operations___release___publishedBy___remoteTypeName",
+  OperationsReleasePublishedByStage = "operations___release___publishedBy___stage",
+  OperationsReleasePublishedByUpdatedAt = "operations___release___publishedBy___updatedAt",
+  OperationsReleaseReleaseAt = "operations___release___releaseAt",
+  OperationsReleaseRemoteId = "operations___release___remoteId",
+  OperationsReleaseRemoteTypeName = "operations___release___remoteTypeName",
+  OperationsReleaseStage = "operations___release___stage",
+  OperationsReleaseStatus = "operations___release___status",
+  OperationsReleaseTitle = "operations___release___title",
+  OperationsReleaseUpdatedAt = "operations___release___updatedAt",
+  OperationsReleaseUpdatedByChildren = "operations___release___updatedBy___children",
+  OperationsReleaseUpdatedByCreatedAt = "operations___release___updatedBy___createdAt",
+  OperationsReleaseUpdatedById = "operations___release___updatedBy___id",
+  OperationsReleaseUpdatedByIsActive = "operations___release___updatedBy___isActive",
+  OperationsReleaseUpdatedByKind = "operations___release___updatedBy___kind",
+  OperationsReleaseUpdatedByName = "operations___release___updatedBy___name",
+  OperationsReleaseUpdatedByPicture = "operations___release___updatedBy___picture",
+  OperationsReleaseUpdatedByPublishedAt = "operations___release___updatedBy___publishedAt",
+  OperationsReleaseUpdatedByRemoteId = "operations___release___updatedBy___remoteId",
+  OperationsReleaseUpdatedByRemoteTypeName = "operations___release___updatedBy___remoteTypeName",
+  OperationsReleaseUpdatedByStage = "operations___release___updatedBy___stage",
+  OperationsReleaseUpdatedByUpdatedAt = "operations___release___updatedBy___updatedAt",
+  OperationsRemoteId = "operations___remoteId",
+  OperationsRemoteTypeName = "operations___remoteTypeName",
+  OperationsStage = "operations___stage",
+  OperationsStatus = "operations___status",
+  OperationsUpdatedAt = "operations___updatedAt",
+  OperationsUpdatedByChildren = "operations___updatedBy___children",
+  OperationsUpdatedByChildrenChildren = "operations___updatedBy___children___children",
+  OperationsUpdatedByChildrenId = "operations___updatedBy___children___id",
+  OperationsUpdatedByCreatedAt = "operations___updatedBy___createdAt",
+  OperationsUpdatedById = "operations___updatedBy___id",
+  OperationsUpdatedByInternalContent = "operations___updatedBy___internal___content",
+  OperationsUpdatedByInternalContentDigest = "operations___updatedBy___internal___contentDigest",
+  OperationsUpdatedByInternalDescription = "operations___updatedBy___internal___description",
+  OperationsUpdatedByInternalFieldOwners = "operations___updatedBy___internal___fieldOwners",
+  OperationsUpdatedByInternalIgnoreType = "operations___updatedBy___internal___ignoreType",
+  OperationsUpdatedByInternalMediaType = "operations___updatedBy___internal___mediaType",
+  OperationsUpdatedByInternalOwner = "operations___updatedBy___internal___owner",
+  OperationsUpdatedByInternalType = "operations___updatedBy___internal___type",
+  OperationsUpdatedByIsActive = "operations___updatedBy___isActive",
+  OperationsUpdatedByKind = "operations___updatedBy___kind",
+  OperationsUpdatedByName = "operations___updatedBy___name",
+  OperationsUpdatedByParentChildren = "operations___updatedBy___parent___children",
+  OperationsUpdatedByParentId = "operations___updatedBy___parent___id",
+  OperationsUpdatedByPicture = "operations___updatedBy___picture",
+  OperationsUpdatedByPublishedAt = "operations___updatedBy___publishedAt",
+  OperationsUpdatedByRemoteId = "operations___updatedBy___remoteId",
+  OperationsUpdatedByRemoteTypeName = "operations___updatedBy___remoteTypeName",
+  OperationsUpdatedByStage = "operations___updatedBy___stage",
+  OperationsUpdatedByUpdatedAt = "operations___updatedBy___updatedAt",
+  ParentChildren = "parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentId = "parent___id",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentParentId = "parent___parent___parent___id",
+  PublishedAt = "publishedAt",
+  PublishedByChildren = "publishedBy___children",
+  PublishedByChildrenChildren = "publishedBy___children___children",
+  PublishedByChildrenChildrenChildren = "publishedBy___children___children___children",
+  PublishedByChildrenChildrenId = "publishedBy___children___children___id",
+  PublishedByChildrenId = "publishedBy___children___id",
+  PublishedByChildrenInternalContent = "publishedBy___children___internal___content",
+  PublishedByChildrenInternalContentDigest = "publishedBy___children___internal___contentDigest",
+  PublishedByChildrenInternalDescription = "publishedBy___children___internal___description",
+  PublishedByChildrenInternalFieldOwners = "publishedBy___children___internal___fieldOwners",
+  PublishedByChildrenInternalIgnoreType = "publishedBy___children___internal___ignoreType",
+  PublishedByChildrenInternalMediaType = "publishedBy___children___internal___mediaType",
+  PublishedByChildrenInternalOwner = "publishedBy___children___internal___owner",
+  PublishedByChildrenInternalType = "publishedBy___children___internal___type",
+  PublishedByChildrenParentChildren = "publishedBy___children___parent___children",
+  PublishedByChildrenParentId = "publishedBy___children___parent___id",
+  PublishedByCreatedAt = "publishedBy___createdAt",
+  PublishedById = "publishedBy___id",
+  PublishedByInternalContent = "publishedBy___internal___content",
+  PublishedByInternalContentDigest = "publishedBy___internal___contentDigest",
+  PublishedByInternalDescription = "publishedBy___internal___description",
+  PublishedByInternalFieldOwners = "publishedBy___internal___fieldOwners",
+  PublishedByInternalIgnoreType = "publishedBy___internal___ignoreType",
+  PublishedByInternalMediaType = "publishedBy___internal___mediaType",
+  PublishedByInternalOwner = "publishedBy___internal___owner",
+  PublishedByInternalType = "publishedBy___internal___type",
+  PublishedByIsActive = "publishedBy___isActive",
+  PublishedByKind = "publishedBy___kind",
+  PublishedByName = "publishedBy___name",
+  PublishedByParentChildren = "publishedBy___parent___children",
+  PublishedByParentChildrenChildren = "publishedBy___parent___children___children",
+  PublishedByParentChildrenId = "publishedBy___parent___children___id",
+  PublishedByParentId = "publishedBy___parent___id",
+  PublishedByParentInternalContent = "publishedBy___parent___internal___content",
+  PublishedByParentInternalContentDigest = "publishedBy___parent___internal___contentDigest",
+  PublishedByParentInternalDescription = "publishedBy___parent___internal___description",
+  PublishedByParentInternalFieldOwners = "publishedBy___parent___internal___fieldOwners",
+  PublishedByParentInternalIgnoreType = "publishedBy___parent___internal___ignoreType",
+  PublishedByParentInternalMediaType = "publishedBy___parent___internal___mediaType",
+  PublishedByParentInternalOwner = "publishedBy___parent___internal___owner",
+  PublishedByParentInternalType = "publishedBy___parent___internal___type",
+  PublishedByParentParentChildren = "publishedBy___parent___parent___children",
+  PublishedByParentParentId = "publishedBy___parent___parent___id",
+  PublishedByPicture = "publishedBy___picture",
+  PublishedByPublishedAt = "publishedBy___publishedAt",
+  PublishedByRemoteId = "publishedBy___remoteId",
+  PublishedByRemoteTypeName = "publishedBy___remoteTypeName",
+  PublishedByStage = "publishedBy___stage",
+  PublishedByUpdatedAt = "publishedBy___updatedAt",
+  ReleaseAt = "releaseAt",
+  RemoteId = "remoteId",
+  RemoteTypeName = "remoteTypeName",
+  Stage = "stage",
+  Status = "status",
+  Title = "title",
+  UpdatedAt = "updatedAt",
+  UpdatedByChildren = "updatedBy___children",
+  UpdatedByChildrenChildren = "updatedBy___children___children",
+  UpdatedByChildrenChildrenChildren = "updatedBy___children___children___children",
+  UpdatedByChildrenChildrenId = "updatedBy___children___children___id",
+  UpdatedByChildrenId = "updatedBy___children___id",
+  UpdatedByChildrenInternalContent = "updatedBy___children___internal___content",
+  UpdatedByChildrenInternalContentDigest = "updatedBy___children___internal___contentDigest",
+  UpdatedByChildrenInternalDescription = "updatedBy___children___internal___description",
+  UpdatedByChildrenInternalFieldOwners = "updatedBy___children___internal___fieldOwners",
+  UpdatedByChildrenInternalIgnoreType = "updatedBy___children___internal___ignoreType",
+  UpdatedByChildrenInternalMediaType = "updatedBy___children___internal___mediaType",
+  UpdatedByChildrenInternalOwner = "updatedBy___children___internal___owner",
+  UpdatedByChildrenInternalType = "updatedBy___children___internal___type",
+  UpdatedByChildrenParentChildren = "updatedBy___children___parent___children",
+  UpdatedByChildrenParentId = "updatedBy___children___parent___id",
+  UpdatedByCreatedAt = "updatedBy___createdAt",
+  UpdatedById = "updatedBy___id",
+  UpdatedByInternalContent = "updatedBy___internal___content",
+  UpdatedByInternalContentDigest = "updatedBy___internal___contentDigest",
+  UpdatedByInternalDescription = "updatedBy___internal___description",
+  UpdatedByInternalFieldOwners = "updatedBy___internal___fieldOwners",
+  UpdatedByInternalIgnoreType = "updatedBy___internal___ignoreType",
+  UpdatedByInternalMediaType = "updatedBy___internal___mediaType",
+  UpdatedByInternalOwner = "updatedBy___internal___owner",
+  UpdatedByInternalType = "updatedBy___internal___type",
+  UpdatedByIsActive = "updatedBy___isActive",
+  UpdatedByKind = "updatedBy___kind",
+  UpdatedByName = "updatedBy___name",
+  UpdatedByParentChildren = "updatedBy___parent___children",
+  UpdatedByParentChildrenChildren = "updatedBy___parent___children___children",
+  UpdatedByParentChildrenId = "updatedBy___parent___children___id",
+  UpdatedByParentId = "updatedBy___parent___id",
+  UpdatedByParentInternalContent = "updatedBy___parent___internal___content",
+  UpdatedByParentInternalContentDigest = "updatedBy___parent___internal___contentDigest",
+  UpdatedByParentInternalDescription = "updatedBy___parent___internal___description",
+  UpdatedByParentInternalFieldOwners = "updatedBy___parent___internal___fieldOwners",
+  UpdatedByParentInternalIgnoreType = "updatedBy___parent___internal___ignoreType",
+  UpdatedByParentInternalMediaType = "updatedBy___parent___internal___mediaType",
+  UpdatedByParentInternalOwner = "updatedBy___parent___internal___owner",
+  UpdatedByParentInternalType = "updatedBy___parent___internal___type",
+  UpdatedByParentParentChildren = "updatedBy___parent___parent___children",
+  UpdatedByParentParentId = "updatedBy___parent___parent___id",
+  UpdatedByPicture = "updatedBy___picture",
+  UpdatedByPublishedAt = "updatedBy___publishedAt",
+  UpdatedByRemoteId = "updatedBy___remoteId",
+  UpdatedByRemoteTypeName = "updatedBy___remoteTypeName",
+  UpdatedByStage = "updatedBy___stage",
+  UpdatedByUpdatedAt = "updatedBy___updatedAt",
+}
+
+export type GraphCms_ScheduledReleaseFilterInput = {
+  children?: Maybe<NodeFilterListInput>;
+  createdAt?: Maybe<JsonQueryOperatorInput>;
+  createdBy?: Maybe<GraphCms_UserFilterInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  errorMessage?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  internal?: Maybe<InternalFilterInput>;
+  isActive?: Maybe<BooleanQueryOperatorInput>;
+  isImplicit?: Maybe<BooleanQueryOperatorInput>;
+  operations?: Maybe<GraphCms_ScheduledOperationFilterListInput>;
+  parent?: Maybe<NodeFilterInput>;
+  publishedAt?: Maybe<JsonQueryOperatorInput>;
+  publishedBy?: Maybe<GraphCms_UserFilterInput>;
+  releaseAt?: Maybe<JsonQueryOperatorInput>;
+  remoteId?: Maybe<IdQueryOperatorInput>;
+  remoteTypeName?: Maybe<StringQueryOperatorInput>;
+  stage?: Maybe<GraphCms_StageQueryOperatorInput>;
+  status?: Maybe<GraphCms_ScheduledReleaseStatusQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  updatedAt?: Maybe<JsonQueryOperatorInput>;
+  updatedBy?: Maybe<GraphCms_UserFilterInput>;
+};
+
+export type GraphCms_ScheduledReleaseGroupConnection = {
+  distinct: Array<Scalars["String"]>;
+  edges: Array<GraphCms_ScheduledReleaseEdge>;
+  field: Scalars["String"];
+  fieldValue?: Maybe<Scalars["String"]>;
+  group: Array<GraphCms_ScheduledReleaseGroupConnection>;
+  max?: Maybe<Scalars["Float"]>;
+  min?: Maybe<Scalars["Float"]>;
+  nodes: Array<GraphCms_ScheduledRelease>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars["Float"]>;
+  totalCount: Scalars["Int"];
+};
+
+export type GraphCms_ScheduledReleaseGroupConnectionDistinctArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseGroupConnectionGroupArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+  limit?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+};
+
+export type GraphCms_ScheduledReleaseGroupConnectionMaxArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseGroupConnectionMinArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseGroupConnectionSumArgs = {
+  field: GraphCms_ScheduledReleaseFieldsEnum;
+};
+
+export type GraphCms_ScheduledReleaseSortInput = {
+  fields?: Maybe<Array<Maybe<GraphCms_ScheduledReleaseFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export enum GraphCms_ScheduledReleaseStatus {
+  Completed = "COMPLETED",
+  Failed = "FAILED",
+  InProgress = "IN_PROGRESS",
+  Pending = "PENDING",
+}
+
+export type GraphCms_ScheduledReleaseStatusQueryOperatorInput = {
+  eq?: Maybe<GraphCms_ScheduledReleaseStatus>;
+  in?: Maybe<Array<Maybe<GraphCms_ScheduledReleaseStatus>>>;
+  ne?: Maybe<GraphCms_ScheduledReleaseStatus>;
+  nin?: Maybe<Array<Maybe<GraphCms_ScheduledReleaseStatus>>>;
+};
+
 export enum GraphCms_Stage {
   Draft = "DRAFT",
   Published = "PUBLISHED",
@@ -9192,6 +10378,8 @@ export type Query = {
   allGraphCmsGallery: GraphCms_GalleryConnection;
   allGraphCmsGalleryImage: GraphCms_GalleryImageConnection;
   allGraphCmsHero: GraphCms_HeroConnection;
+  allGraphCmsScheduledOperation: GraphCms_ScheduledOperationConnection;
+  allGraphCmsScheduledRelease: GraphCms_ScheduledReleaseConnection;
   allGraphCmsTeam: GraphCms_TeamConnection;
   allGraphCmsTeamMember: GraphCms_TeamMemberConnection;
   allGraphCmsUser: GraphCms_UserConnection;
@@ -9213,6 +10401,8 @@ export type Query = {
   graphCmsGallery?: Maybe<GraphCms_Gallery>;
   graphCmsGalleryImage?: Maybe<GraphCms_GalleryImage>;
   graphCmsHero?: Maybe<GraphCms_Hero>;
+  graphCmsScheduledOperation?: Maybe<GraphCms_ScheduledOperation>;
+  graphCmsScheduledRelease?: Maybe<GraphCms_ScheduledRelease>;
   graphCmsTeam?: Maybe<GraphCms_Team>;
   graphCmsTeamMember?: Maybe<GraphCms_TeamMember>;
   graphCmsUser?: Maybe<GraphCms_User>;
@@ -9306,6 +10496,20 @@ export type QueryAllGraphCmsHeroArgs = {
   limit?: Maybe<Scalars["Int"]>;
   skip?: Maybe<Scalars["Int"]>;
   sort?: Maybe<GraphCms_HeroSortInput>;
+};
+
+export type QueryAllGraphCmsScheduledOperationArgs = {
+  filter?: Maybe<GraphCms_ScheduledOperationFilterInput>;
+  limit?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+  sort?: Maybe<GraphCms_ScheduledOperationSortInput>;
+};
+
+export type QueryAllGraphCmsScheduledReleaseArgs = {
+  filter?: Maybe<GraphCms_ScheduledReleaseFilterInput>;
+  limit?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+  sort?: Maybe<GraphCms_ScheduledReleaseSortInput>;
 };
 
 export type QueryAllGraphCmsTeamArgs = {
@@ -9656,6 +10860,51 @@ export type QueryGraphCmsHeroArgs = {
   socialProof?: Maybe<StringQueryOperatorInput>;
   stage?: Maybe<GraphCms_StageQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  updatedAt?: Maybe<JsonQueryOperatorInput>;
+  updatedBy?: Maybe<GraphCms_UserFilterInput>;
+};
+
+export type QueryGraphCmsScheduledOperationArgs = {
+  children?: Maybe<NodeFilterListInput>;
+  createdAt?: Maybe<JsonQueryOperatorInput>;
+  createdBy?: Maybe<GraphCms_UserFilterInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  errorMessage?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  internal?: Maybe<InternalFilterInput>;
+  parent?: Maybe<NodeFilterInput>;
+  publishedAt?: Maybe<JsonQueryOperatorInput>;
+  publishedBy?: Maybe<GraphCms_UserFilterInput>;
+  rawPayload?: Maybe<JsonQueryOperatorInput>;
+  release?: Maybe<GraphCms_ScheduledReleaseFilterInput>;
+  remoteId?: Maybe<IdQueryOperatorInput>;
+  remoteTypeName?: Maybe<StringQueryOperatorInput>;
+  stage?: Maybe<GraphCms_StageQueryOperatorInput>;
+  status?: Maybe<GraphCms_ScheduledOperationStatusQueryOperatorInput>;
+  updatedAt?: Maybe<JsonQueryOperatorInput>;
+  updatedBy?: Maybe<GraphCms_UserFilterInput>;
+};
+
+export type QueryGraphCmsScheduledReleaseArgs = {
+  children?: Maybe<NodeFilterListInput>;
+  createdAt?: Maybe<JsonQueryOperatorInput>;
+  createdBy?: Maybe<GraphCms_UserFilterInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  errorMessage?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  internal?: Maybe<InternalFilterInput>;
+  isActive?: Maybe<BooleanQueryOperatorInput>;
+  isImplicit?: Maybe<BooleanQueryOperatorInput>;
+  operations?: Maybe<GraphCms_ScheduledOperationFilterListInput>;
+  parent?: Maybe<NodeFilterInput>;
+  publishedAt?: Maybe<JsonQueryOperatorInput>;
+  publishedBy?: Maybe<GraphCms_UserFilterInput>;
+  releaseAt?: Maybe<JsonQueryOperatorInput>;
+  remoteId?: Maybe<IdQueryOperatorInput>;
+  remoteTypeName?: Maybe<StringQueryOperatorInput>;
+  stage?: Maybe<GraphCms_StageQueryOperatorInput>;
+  status?: Maybe<GraphCms_ScheduledReleaseStatusQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
   updatedAt?: Maybe<JsonQueryOperatorInput>;
   updatedBy?: Maybe<GraphCms_UserFilterInput>;
@@ -11017,6 +12266,38 @@ export type TeamQuery = {
         desc?: string | null | undefined;
         job?: string | null | undefined;
         name?: string | null | undefined;
+        image?: { gatsbyImageData: unknown } | null | undefined;
+      }>;
+    }>;
+  };
+};
+
+export type EventsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type EventsQuery = {
+  allGraphCmsEvent: {
+    nodes: Array<{
+      date?: unknown | null | undefined;
+      id: string;
+      slug?: string | null | undefined;
+      name?: string | null | undefined;
+      location?: string | null | undefined;
+      excerpt?: string | null | undefined;
+      thumbnail?: { gatsbyImageData: unknown } | null | undefined;
+    }>;
+  };
+};
+
+export type GalleryQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GalleryQuery = {
+  allGraphCmsGallery: {
+    nodes: Array<{
+      title?: string | null | undefined;
+      galleryImages: Array<{
+        id: string;
+        alt?: string | null | undefined;
+        category: Array<string>;
         image?: { gatsbyImageData: unknown } | null | undefined;
       }>;
     }>;
