@@ -48,6 +48,11 @@ fragment ScheduledOperation on ScheduledOperation {
       locale
       stage
     }
+    ... on Category {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
     ... on Contact {
       remoteTypeName: __typename
       remoteId: id

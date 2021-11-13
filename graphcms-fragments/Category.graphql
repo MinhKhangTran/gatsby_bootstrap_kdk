@@ -1,14 +1,10 @@
-fragment Hero on Hero {
+fragment Category on Category {
   stage
   remoteId: id
   createdAt
   updatedAt
   publishedAt
-  title
-  subtitle
-  desc
-  ctaBtn
-  socialProof
+  name
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -30,19 +26,10 @@ fragment Hero on Hero {
       stage
     }
   }
-  images {
-    ... on Asset {
+  galleryImages {
+    ... on GalleryImage {
       remoteTypeName: __typename
       remoteId: id
-      locale
-      stage
-    }
-  }
-  icons {
-    ... on Asset {
-      remoteTypeName: __typename
-      remoteId: id
-      locale
       stage
     }
   }

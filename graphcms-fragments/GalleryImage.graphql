@@ -35,4 +35,18 @@ fragment GalleryImage on GalleryImage {
       stage
     }
   }
+  categories {
+    ... on Category {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
 }

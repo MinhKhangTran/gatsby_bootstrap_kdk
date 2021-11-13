@@ -39,5 +39,82 @@ fragment Asset on Asset {
       stage
     }
   }
+  iconsHero {
+    ... on Hero {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageAbout {
+    ... on About {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageEvent {
+    ... on Event {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  thumbnailEvent {
+    ... on Event {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imagesFaq {
+    ... on Faq {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageCta {
+    ... on Cta {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageTeamMember {
+    ... on TeamMember {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageContact {
+    ... on Contact {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageHoritzontalContact {
+    ... on Contact {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  imageGalleryImage {
+    ... on GalleryImage {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   url
 }

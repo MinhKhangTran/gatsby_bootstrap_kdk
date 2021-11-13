@@ -41,4 +41,11 @@ fragment Faq on Faq {
       stage
     }
   }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
 }

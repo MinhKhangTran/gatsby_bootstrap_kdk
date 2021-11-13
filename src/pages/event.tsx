@@ -1,14 +1,16 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { EventsQuery } from "../types.generated";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Moment from "react-moment";
+import SEO from "../components/Seo";
 
 const EventPage = ({ data }: { data: EventsQuery }) => {
   return (
     <Layout>
+      <SEO title="Events" />
       <Container className="mb-5">
         <h1 className="display-3">Events</h1>
         <h2>Upcoming Events</h2>
@@ -30,10 +32,12 @@ const EventPage = ({ data }: { data: EventsQuery }) => {
                 </Moment>
                 <p>{event.location}</p>
                 <p className="text-secondary lead">{event.excerpt}</p>
-                <Button>
-                  Read more{" "}
-                  <span className="visually-hidden">about {event.name}</span>
-                </Button>
+                <Link to={`/${event.slug}`}>
+                  <Button>
+                    Read more{" "}
+                    <span className="visually-hidden">about {event.name}</span>
+                  </Button>
+                </Link>
               </Col>
             </Row>
           );

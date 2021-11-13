@@ -4,12 +4,14 @@ import { graphql } from "gatsby";
 import { Col, Container, Row } from "react-bootstrap";
 import { GalleryQuery } from "../types.generated";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import SEO from "../components/Seo";
 
 const GalleryPage = ({ data }: { data: GalleryQuery }) => {
   return (
     <Layout>
+      <SEO title="Gallery" />
       <Container className="mb-5">
-        <h1 className="display-3">Gallery</h1>
+        <h1 className="display-3">{data.allGraphCmsGallery.nodes[0].title}</h1>
         <Row>
           {data.allGraphCmsGallery.nodes[0].galleryImages.map((pic) => {
             return (

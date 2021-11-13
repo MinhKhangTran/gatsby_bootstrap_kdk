@@ -31,7 +31,7 @@ const Navigation = () => {
               Gallery
             </Link>
           </Nav>
-          <a className="btn btn-light" href="#contact">
+          <a className="btn btn-light" href="/#contact">
             Contact
           </a>
         </Navbar.Collapse>
