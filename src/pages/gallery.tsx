@@ -15,14 +15,18 @@ const GalleryPage = ({ data }: { data: GalleryQuery }) => {
         <ButtonGroup aria-label="Category button group">
           {data.allGraphCmsCategory.distinct.map((category, index) => {
             return (
-              <Button key={index} variant="primary" className="text-capitalize">
-                <Link
-                  style={{ color: "white", textDecoration: "none" }}
-                  to={`/gallery/${category}`}
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={`/gallery/${category}`}
+              >
+                <Button
+                  key={index}
+                  variant="primary"
+                  className="text-capitalize me-4"
                 >
                   {category}
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             );
           })}
         </ButtonGroup>

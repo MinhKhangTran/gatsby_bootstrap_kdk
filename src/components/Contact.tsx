@@ -67,7 +67,7 @@ const Contact = () => {
               <h2 className="mt-4 mb-3 text-center text-capitalize text-decoration-underline">
                 {contact.title}
               </h2>
-              <p className="lead text-secondary">{contact.desc}</p>
+              <p className="lead">{contact.desc}</p>
               <Row>
                 <Form noValidate onSubmit={handleSubmit(onSubmit)}>
                   <Row className="contact_form">

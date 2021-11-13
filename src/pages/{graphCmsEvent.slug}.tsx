@@ -27,11 +27,13 @@ const SingleEventPage = ({ data }: { data: SinglePageQuery }) => {
         </h1>
         <Row>
           <Col md={7}>
-            <p className="lead text-secondary">{data.graphCmsEvent?.desc}</p>
+            <p className="lead text-secondary mb-md-5">
+              {data.graphCmsEvent?.desc}
+            </p>
           </Col>
           <Col md={5}>
             <div className="box mt-3 mt-md-0 mb-5 mt-lg-0 border border-primary">
-              <h3 className="text-center bg-blue-100 pb-1">Details</h3>
+              <h2 className="text-center bg-blue-100 pb-1">Details</h2>
               <Container>
                 <p className="fs-5 mb-0">Date</p>
                 <Moment className="text-secondary" format="DD.MMMM.YYYY">

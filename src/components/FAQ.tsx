@@ -25,8 +25,6 @@ const FAQ = () => {
                 return (
                   <Col xs={4} key={image.id}>
                     <div
-                      tabIndex={-1}
-                      aria-label={`faq thumbimages ${index + 1} button`}
                       onClick={() => {
                         setNumber(index);
                       }}

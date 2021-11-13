@@ -7,8 +7,19 @@ import { ButtonGroup, Container, Button, Col, Row } from "react-bootstrap";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { captitalizeFirstLetter } from "../../helpers/capitalizeFirstLetter";
 
-const SingeGalleryCategory = ({ data }: { data: SingleCategoryQuery }) => {
+interface ILocation {
+  pathname: string;
+}
+
+const SingeGalleryCategory = ({
+  data,
+  location: { pathname },
+}: {
+  data: SingleCategoryQuery;
+  location: ILocation;
+}) => {
   const titleCapital = captitalizeFirstLetter(data.graphCmsCategory?.name!);
+
   return (
     <Layout>
       <SEO title={`Gallery | ${titleCapital}`} />
@@ -17,15 +28,20 @@ const SingeGalleryCategory = ({ data }: { data: SingleCategoryQuery }) => {
         <ButtonGroup aria-label="Category button group">
           {data.allGraphCmsCategory.distinct.map((category, index) => {
             return (
-              <Button key={index} variant="primary" className="text-capitalize">
-                <Link
-                  style={{ color: "white", textDecoration: "none" }}
-                  to={`/gallery/${category}`}
-                  activeStyle={{ textDecoration: "underline" }}
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                to={`/gallery/${category}`}
+                activeStyle={{ textDecoration: "underline" }}
+              >
+                <Button
+                  key={index}
+                  variant="primary"
+                  className="text-capitalize me-4"
+                  active={category === pathname.split("/")[2]}
                 >
                   {category}
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             );
           })}
         </ButtonGroup>
