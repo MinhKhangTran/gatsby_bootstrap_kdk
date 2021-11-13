@@ -1,17 +1,19 @@
 import React from "react";
-import Layout from "../components/Layout";
 import { graphql, Link } from "gatsby";
-import { Col, Container, Row, Button, ButtonGroup } from "react-bootstrap";
-import { GalleryQuery } from "../types.generated";
+import Layout from "../../components/Layout";
+import SEO from "../../components/Seo";
+import { SingleCategoryQuery } from "../../types.generated";
+import { ButtonGroup, Container, Button, Col, Row } from "react-bootstrap";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import SEO from "../components/Seo";
+import { captitalizeFirstLetter } from "../../helpers/capitalizeFirstLetter";
 
-const GalleryPage = ({ data }: { data: GalleryQuery }) => {
+const SingeGalleryCategory = ({ data }: { data: SingleCategoryQuery }) => {
+  const titleCapital = captitalizeFirstLetter(data.graphCmsCategory?.name!);
   return (
     <Layout>
-      <SEO title="Gallery" />
+      <SEO title={`Gallery | ${titleCapital}`} />
       <Container className="mb-5">
-        <h1 className="display-3">{data.allGraphCmsGallery.nodes[0].title}</h1>
+        <h1 className="display-3">Gallery</h1>
         <ButtonGroup aria-label="Category button group">
           {data.allGraphCmsCategory.distinct.map((category, index) => {
             return (
@@ -19,6 +21,7 @@ const GalleryPage = ({ data }: { data: GalleryQuery }) => {
                 <Link
                   style={{ color: "white", textDecoration: "none" }}
                   to={`/gallery/${category}`}
+                  activeStyle={{ textDecoration: "underline" }}
                 >
                   {category}
                 </Link>
@@ -28,7 +31,7 @@ const GalleryPage = ({ data }: { data: GalleryQuery }) => {
         </ButtonGroup>
 
         <Row>
-          {data.allGraphCmsGallery.nodes[0].galleryImages.map((pic) => {
+          {data.graphCmsCategory?.galleryImages.map((pic) => {
             return (
               <Col key={pic.id} lg={4} md={6} className="py-3">
                 <GatsbyImage
@@ -45,17 +48,14 @@ const GalleryPage = ({ data }: { data: GalleryQuery }) => {
 };
 
 export const query = graphql`
-  query Gallery {
-    allGraphCmsGallery {
-      nodes {
-        title
-        galleryImages {
-          id
-          alt
-          category
-          image {
-            gatsbyImageData(placeholder: TRACED_SVG)
-          }
+  query SingleCategory($name: String!) {
+    graphCmsCategory(name: { eq: $name }) {
+      name
+      galleryImages {
+        id
+        alt
+        image {
+          gatsbyImageData(placeholder: TRACED_SVG)
         }
       }
     }
@@ -65,4 +65,4 @@ export const query = graphql`
   }
 `;
 
-export default GalleryPage;
+export default SingeGalleryCategory;

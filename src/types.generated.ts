@@ -38472,6 +38472,25 @@ export type GalleryQuery = {
       }>;
     }>;
   };
+  allGraphCmsCategory: { distinct: Array<string> };
+};
+
+export type SingleCategoryQueryVariables = Exact<{
+  name: Scalars["String"];
+}>;
+
+export type SingleCategoryQuery = {
+  graphCmsCategory?:
+    | {
+        name?: string | null | undefined;
+        galleryImages: Array<{
+          alt?: string | null | undefined;
+          image?: { gatsbyImageData: unknown } | null | undefined;
+        }>;
+      }
+    | null
+    | undefined;
+  allGraphCmsCategory: { distinct: Array<string> };
 };
 
 export type SinglePageQueryVariables = Exact<{
