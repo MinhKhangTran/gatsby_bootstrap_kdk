@@ -29,6 +29,7 @@
     "gatsby-source-filesystem": "^4.0.0",
     "gatsby-source-graphcms": "^2.7.0-next.1",
     "gatsby-transformer-sharp": "^4.0.0",
+    "graphql-request": "^3.6.1",
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-bootstrap": "^2.0.1",
